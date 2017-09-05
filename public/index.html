@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>SocketCluster</title>
+  <script type="text/javascript" src='/jquery-1.10.2.js'></script>
+  <!-- <script type="text/javascript" src='/handlebars.js'></script> -->
+  <!-- <script type="text/javascript" src='/typeahead.bundle.js'></script> -->
+
+  <!-- <script type="text/javascript" src="/socketcluster.js"></script> -->
+
+
+
+</head>
+
+<body>
+  <!--http://blog.64cm.com/post/2014/08/13/%E4%BD%BF%E7%94%A8bootstrap-typeahead%E6%8F%92%E4%BB%B6-->
+  <div class="example">
+    <h2>基本示例</h2>
+    <div id="basic-example">
+      <input class="typeahead" type="text" placeholder="请输入省份">
+    </div>
+  </div>
+  <script type="text/javascript" src="/typeahead.bundle.js"></script>
+  <script type="text/javascript">
+    jQuery(function () {
+      /*** 1.基本示例 ***/
+      var provinces = ["广东省", "福建省", "山西省", "山东省", "湖北省", "湖南省", "陕西省", "上海市", "北京市", "广西省"];
+
+      var substringMatcher = function (strs) {
+        return function findMatches(q, cb) {
+          var matches, substrRegex;
+          matches = [];
+          substrRegex = new RegExp(q, 'i');
+          $.each(strs, function (i, str) {
+            if (substrRegex.test(str)) {
+              matches.push({ value: str });
+            }
+          });
+          cb(matches);
+        };
+      };
+
+      $('#basic-example .typeahead').typeahead({
+        hint: true,
+        highlight: true,
+        minLength: 1
+      },
+        {
+          name: 'provinces',
+          displayKey: 'value',
+          source: substringMatcher(provinces)
+        });
+
+    });
+
+  </script>
+</body>
+
+</html>

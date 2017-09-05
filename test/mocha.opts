@@ -1,0 +1,5 @@
+--reporter mochawesome
+--recursive
+--compilers js:babel-core/register
+--growl
+--timeout 50000

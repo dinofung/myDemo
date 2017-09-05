@@ -1,0 +1,59 @@
+{
+  "name": "mydemo",
+  "version": "1.0.0",
+  "description": "for Used to study new technologiesUsed to study new technologies",
+  "main": "src/server.js",
+  "scripts": {
+    "server": "babel-node --inspect src/server.js --inspect-workers",
+    "build": "babel src -d bin",
+    "start": "node bin/server.js",
+    "go": "babel src -d bin && node bin/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DinoFeng/myDemo.git"
+  },
+  "keywords": [
+    "demo"
+  ],
+  "author": "Dino",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DinoFeng/myDemo/issues"
+  },
+  "homepage": "https://github.com/DinoFeng/myDemo#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.25.0",
+    "babel-eslint": "^7.2.3",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-register": "^6.24.1",
+    "chai": "^4.0.2",
+    "chai-as-promised": "^7.0.0",
+    "eslint": "^4.0.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.3.0",
+    "eslint-plugin-node": "^5.0.0",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "fetch-mock": "^5.11.0",
+    "form-data": "^2.2.0",
+    "locate-path": "^2.0.0",
+    "mocha": "^3.4.2",
+    "mochawesome": "^2.2.1",
+    "sinon": "^2.3.5"
+  },
+  "dependencies": {
+    "config-lite": "^2.1.0",
+    "express": "^4.15.4",
+    "fs": "^0.0.1-security",
+    "moment": "^2.18.1",
+    "morgan": "^1.8.2",
+    "path": "^0.12.7",
+    "serve-static": "^1.12.4",
+    "winston": "^2.3.1",
+    "winston-daily-rotate-file": "^1.4.6"
+  }
+}
